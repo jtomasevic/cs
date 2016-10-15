@@ -61,6 +61,9 @@ class Graph:
                     stack.append(n)
         return result
 
+    '''
+    THIS METHOD IS FOR Unweighted graphs
+    '''
     @staticmethod
     def shortest_paths(root_node):
         '''
