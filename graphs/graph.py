@@ -5,15 +5,15 @@ class Graph:
     def __init__(self):
         self.nodes = []
 
-    '''
-    (Wikipadia):"Breadth-first search (BFS) is an algorithm for traversing graph data structures.
-    It starts at some arbitrary node of a graph, and explores the neighbor nodes first, before moving to the next level
-    neighbors."
-    :param root_node: apply dfs starting from specific node
-    :return: list of nodes t representing breadth-first traversal
-    '''
     @staticmethod
     def bfs(root_node):
+        '''
+        (Wikipadia):"Breadth-first search (BFS) is an algorithm for traversing graph data structures.
+        It starts at some arbitrary node of a graph, and explores the neighbor nodes first, before moving to the next level
+        neighbors."
+        :param root_node: apply dfs starting from specific node
+        :return: list of nodes t representing breadth-first traversal
+        '''
         # put result here.
         result = []
         # we keep track on visited nodes to avoid multiple processing of same node
@@ -34,14 +34,14 @@ class Graph:
                     queue.put(n)
         return result
 
-    '''
-    (Wikipadia): "Depth-first search (DFS) is an algorithm for traversing graph data. One starts at some arbitrary node
-    and explores as far as possible along each branch before backtracking."
-    :param root_node: apply dfs starting from specific node
-    :return: list of nodes t representing depth-first traversal
-    '''
     @staticmethod
     def dfs(root_node):
+        '''
+        (Wikipadia): "Depth-first search (DFS) is an algorithm for traversing graph data. One starts at some arbitrary node
+        and explores as far as possible along each branch before backtracking."
+        :param root_node: apply dfs starting from specific node
+        :return: list of nodes t representing depth-first traversal
+        '''
         # put result here.
         result = []
         # we keep track on visited nodes to avoid multiple processing of same node
