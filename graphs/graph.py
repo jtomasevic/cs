@@ -60,3 +60,29 @@ class Graph:
                     visited.append(n)
                     stack.append(n)
         return result
+
+    @staticmethod
+    def shortest_cuts(root_node):
+        # we'll keep here shortest distance from given node (root_node) to rest of nodes in the three
+        # ... and we put there given node with distance 0 (from himself to himself)
+        distances = {root_node.value: 0}
+        # we'll use Depth-first search approach so we need a queue
+        q = Queue.Queue()
+        q.put(root_node)
+        # we keep track on visited nodes to avoid multiple processing of same node
+        # ... and we add root node to visited
+        visited = [root_node]
+        while not q.empty():
+            processing = q.get()
+            for n in processing.neighbours:
+                # check if note is already processed.
+                # if it's not processed add to 'visited' collection
+                if n not in visited:
+                    visited.append(n)
+                    q.put(n)
+                    # we need to check if neighbour is in distances collection.
+                    if n not in distances:
+                        # ...just put neighbour in distances collection.
+                        distances[n.value] = -1
+                    distances[n.value] = distances[processing.value] + 1
+        return distances
