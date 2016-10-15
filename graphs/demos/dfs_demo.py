@@ -18,7 +18,7 @@ n2.neighbours.append(n5)
 n2.neighbours.append(n6)
 n3.neighbours.append(n7)
 n3.neighbours.append(n8)
-
+# code bellow makes sure that graph is not directional. (so every edge is bi-directional)
 n2.neighbours.append(n1)
 n3.neighbours.append(n1)
 n4.neighbours.append(n1)
@@ -28,4 +28,7 @@ n7.neighbours.append(n3)
 n8.neighbours.append(n3)
 
 
-g.dfs(n1)
+result = g.dfs(n1)
+for r in result:
+    print r.value
+
