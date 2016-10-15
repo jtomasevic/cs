@@ -6,11 +6,11 @@ class Graph:
         self.nodes = []
 
     '''
-    (Wikipadia):"Breadth-first search (BFS) is an algorithm for traversing or searching tree or graph data structures.
-    It starts at the tree root (or some arbitrary node of a graph, sometimes referred to as a 'search key'[1]) and
-    explores the neighbor nodes first, before moving to the next level neighbors."
+    (Wikipadia):"Breadth-first search (BFS) is an algorithm for traversing graph data structures.
+    It starts at some arbitrary node of a graph, and explores the neighbor nodes first, before moving to the next level
+    neighbors."
     :param root_node: apply dfs starting from specific node
-    :return: list of nodes t
+    :return: list of nodes t representing breadth-first traversal
     '''
     @staticmethod
     def bfs(root_node):
@@ -35,11 +35,10 @@ class Graph:
         return result
 
     '''
-    (Wikipadia): "Depth-first search (DFS) is an algorithm for traversing or searching tree or graph data structures.
-    One starts at the root (selecting some arbitrary node as the root in the case of a graph) and explores as far
-    as possible along each branch before backtracking."
+    (Wikipadia): "Depth-first search (DFS) is an algorithm for traversing graph data. One starts at some arbitrary node
+    and explores as far as possible along each branch before backtracking."
     :param root_node: apply dfs starting from specific node
-    :return: list of nodes t
+    :return: list of nodes t representing depth-first traversal
     '''
     @staticmethod
     def dfs(root_node):
