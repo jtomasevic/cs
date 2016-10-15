@@ -32,5 +32,5 @@ n8.neighbours.append(n3)
 n9.neighbours.append(n8)
 
 
-result = g.shortest_cuts(n1)
+result = g.shortest_paths(n1)
 print result

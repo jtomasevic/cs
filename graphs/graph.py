@@ -62,7 +62,13 @@ class Graph:
         return result
 
     @staticmethod
-    def shortest_cuts(root_node):
+    def shortest_paths(root_node):
+        '''
+        (Wikipadia): In graph theory, the shortest path problem is the problem of finding a path between two vertices
+        (or nodes) in a graph such that the sum of the weights of its constituent edges is minimized.
+        :param root_node: node for which we are looking shortest cuts to other nodes
+        :return: dictionary in format key:node.value, value:distance from root_node.
+        '''
         # we'll keep here shortest distance from given node (root_node) to rest of nodes in the three
         # ... and we put there given node with distance 0 (from himself to himself)
         distances = {root_node.value: 0}
@@ -84,5 +90,8 @@ class Graph:
                     if n not in distances:
                         # ...just put neighbour in distances collection.
                         distances[n.value] = -1
+                    # distance from root node to n node is distance from processing node + 1
                     distances[n.value] = distances[processing.value] + 1
         return distances
+
+
