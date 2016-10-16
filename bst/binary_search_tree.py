@@ -73,6 +73,22 @@ class BinarySearchTree:
                 # ... otherwise call recursive method again, this time passing left node as root node
                 return self._add(root.right, value)
 
+    def min(self, node=None):
+        current = self.root if node is None else node
+        while current.left is not None:
+            current = current.left
+        return current
+
+    def max(self, node=None):
+        current = self.root if node is None else node
+        while current.right is not None:
+            current = current.right
+        return current
+
     def print_tree(self):
+        '''
+        Just helper method
+        :return:
+        '''
         for i,n in enumerate(self.nodes):
             print (i+1), 'node: ', n.value, ' parent: ', -1 if n.parent is None else n.parent.value, 'left: ', -1 if n.left is None else n.left.value, 'right: ', -1 if n.right is None else n.right.value
