@@ -101,4 +101,25 @@ class Graph:
                     distances[n.value] = distances[processing.value] + 1
         return distances
 
+    '''
+    THIS METHOD IS FOR Unweighted, undirected graphs
+    '''
+    @staticmethod
+    def connected_components(nodes):
+        '''
+        NOTE: Valid only for undirected graphs.
+        In graph theory, a connected component (or just component) of an undirected graph is a subgraph in which any two
+        vertices are connected to each other by paths, and which is connected to no additional vertices in the
+        supergraph.
+        :return:
+        '''
+        components = []
+        visited = []
+        for node in nodes:
+            if not (node in visited):
+                com = Graph.bfs(node)
 
+                components.append(com)
+                for n in com:
+                    visited.append(n)
+        return components
