@@ -2,6 +2,10 @@ import Queue
 
 
 class Graph:
+    '''
+    NOTE!!!! : this Graph class is describing un-weight graph, graph where all edges have constant "weight".
+    It means it's not important nature of node's connection but only fact that they are connected.
+    '''
     def __init__(self):
         self.nodes = []
 
